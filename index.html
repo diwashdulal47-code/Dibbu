@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dibbu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #4CAF50;
+            padding: 15px;
+            position: relative;
+        }
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Help button top-right */
+        #helpBtn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #helpBtn:hover {
+            background-color: #ff3300;
+        }
+
+        h1, h2 {
+            color: #3333cc;
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 20px;
+            color: #333333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 20px;
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff3300;
+        }
+
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+        input, select {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#form">Form</a>
+        <button id="helpBtn" onclick="showHelp()">Help</button>
+    </nav>
+
+    <!-- First interface -->
+    <div id="firstInterface">
+        <h1 id="home">Welcome to Dibbu!</h1>
+        <p>Hello! Welcome. For more information click Help.</p>
+        <button onclick="openForm()">Click Here!</button>
+        <p id="demo">Hello! I am Dibbu 😎</p>
+    </div>
+
+    <!-- Second interface (form) -->
+    <div id="secondInterface" style="display:none;">
+        <h2>Fill Your Details</h2>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="date" placeholder="Date of Birth" required>
+            <select required>
+                <option value="">Select Sex</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2026 Dibbu
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function openForm() {
+            // Hide first interface
+            document.getElementById("firstInterface").style.display = "none";
+            // Show second interface
+            document.getElementById("secondInterface").style.display = "block";
+        }
+
+        function showHelp() {
+            alert("@dibbugmail.com\nThis website is made for educational purpose and while doing my coding practical.");
+        }
+    </script>
+
+</body>
+</html>
+@dibbugmail.com
+This website is made for educational purpose and while doing my coding practical.
